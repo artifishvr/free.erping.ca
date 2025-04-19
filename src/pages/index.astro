@@ -1,0 +1,149 @@
+---
+import Layout from "../layout.astro";
+import ChatButton from "../components/ChatButton.astro";
+
+import downloadbuttonimage from "../assets/download.png";
+import norton from "../assets/taxevasion.jpg";
+
+import catlaughing from "../assets/catlaughing.mp4";
+---
+
+<script>
+    function downloadButtonAction() {
+        const video = document.getElementById("video");
+        // @ts-ignore
+        video?.classList.remove("hidden");
+        // @ts-ignore
+        video.play();
+
+        // @ts-ignore
+        video.addEventListener("ended", () => {
+            // @ts-ignore
+            video.classList.add("hidden");
+            // @ts-ignore
+            video.currentTime = 0;
+            // @ts-ignore
+            video.pause();
+        });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const downloadButton = document.getElementById("downloadButton");
+
+        if (!downloadButton) {
+            console.error("Download button not found");
+            return;
+        }
+
+        downloadButton.addEventListener("click", downloadButtonAction);
+    });
+</script>
+
+<Layout title="Free ERP Download">
+    <div class="fixed inset-0 z-50 pointer-events-none">
+        <video
+            src={catlaughing}
+            class="w-full h-full object-cover hidden"
+            id="video"></video>
+    </div>
+
+    <ChatButton />
+    <div class="flex flex-col items-center justify-center min-h-screen">
+        <div
+            class="text-center bg-gray-100 p-4 rounded-lg shadow-md flex flex-col items-center justify-center"
+        >
+            <h1 class="text-4xl font-bold">ERP Download</h1>
+            <h1 class="text-sm font-medium ml-24">
+                free no virus no std real no fake
+            </h1>
+
+            <button id="downloadButton">
+                <img
+                    src={downloadbuttonimage.src}
+                    class="w-48 animate-bounce hover:animate-pulse"
+                    alt="Download Button"
+                /></button
+            >
+
+            <img src={norton.src} class="w-128 -mt-12" alt="Download Button" />
+
+            <p class="text-sm text-center max-w-lg">
+                If you have come to our website, you have reached your
+                destination of exciting exploration! You are invited to enter
+                the mysterious world of Role Play Assets, where the limitless
+                possibilities of the fantastic, sexual imagination come to life.
+                At this magical location, one of the free prefab assets for
+                Role-Players and their erotic fantasies is available with just a
+                click!
+            </p>
+            <p class="text-sm text-center max-w-lg">
+                What are you waiting for? Immerse yourself in this intriguing
+                experience today! You can download this highly sought after
+                model that brings an enchantment unlike any other. Get ready to
+                step into a world where everything seems to make sense as the
+                seeds of unrestrained fantasy and sexuality germinate and
+                thrive! With the prefabs we offer, it will become a journey full
+                of passion and fulfilling adventure, unlike any other! So why
+                hesitate? Simply tap on the free erotic Role-Play Asset and
+                model button now, or scroll down for further instructions on how
+                to get started. Let us bring out the hidden desire inside you
+                that longs for such sensual exploration of sexual pleasures that
+                is otherwise forbidden in society today. Join our exclusive
+                network, explore new dimensions within your desires with a world
+                like never before seen!
+            </p>
+            <p class="text-sm text-center max-w-lg">
+                We promise we will spam or annoy you by pushing you into
+                anything you don't want to download as per the legalities and
+                regulations on such platforms for sharing digital content
+                freely. However, feel free to send any queries through our
+                dedicated chat box which will instantly respond upon opening and
+                enssure all concerns are addressed immediately, should arise
+                while exploring this domain of pleasure. Remember that indulging
+                in these pleasures could take you down an intriguing road beyond
+                anything you might ever have expected, but at the end, it is
+                ultimately your responsibility how much depth of erotic
+                experiences can bring about in our fantasy-like reality - no
+                limits, no regrets!
+            </p>
+        </div>
+
+        <div class="section">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="h-top">How Does It Work?</h2>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="step">
+                                <i class="fas fa-search text-primary"></i>
+                                <h4 class="custom-step-one-title">Step 1</h4>
+                                <p class="custom-step-one-description">
+                                    Check it's your file
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="step">
+                                <i class="fas fa-mouse-pointer text-warning"
+                                ></i>
+                                <h4 class="custom-step-two-title">Step 2</h4>
+                                <p class="custom-step-two-description">
+                                    Press the Button
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="step">
+                                <i class="fas fa-check-circle text-success"></i>
+                                <h4 class="custom-step-three-title">Step 3</h4>
+                                <p class="custom-step-three-description">
+                                    Complete the offer to access your file
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</Layout>

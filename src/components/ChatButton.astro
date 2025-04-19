@@ -1,0 +1,106 @@
+<div class="fixed bottom-6 right-6 z-50">
+    <button
+        id="chatToggle"
+        class="bg-indigo-600 text-white p-4 rounded-full shadow-lg transition-transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2"
+    >
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            class="w-6 h-6"
+        >
+            <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"
+            ></path>
+        </svg>
+        <span class="sr-only">Open chat</span>
+    </button>
+
+    <div
+        id="chatContainer"
+        class="fixed bottom-20 right-6 w-80 bg-white rounded-lg shadow-xl flex flex-col overflow-hidden border border-gray-200 max-h-96 transition-all duration-300 ease-in-out hidden"
+    >
+        <div
+            class="bg-indigo-600 text-white p-3 flex justify-between items-center"
+        >
+            <h3 class="text-sm font-semibold">Chat Support</h3>
+            <button
+                id="chatClose"
+                class="text-white rounded-full p-1 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-white"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    class="w-5 h-5"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+                <span class="sr-only">Close chat</span>
+            </button>
+        </div>
+        <div
+            class="flex-grow p-3 overflow-y-auto space-y-3"
+            style="max-height: 250px;"
+        >
+            <div
+                class="p-2 rounded-lg max-w-[80%] bg-gray-100 self-start rounded-br-none"
+            >
+                <p>mmphgh~ *pulls down underwear* im so horny daddy~</p>
+            </div>
+            <!-- More messages can go here -->
+        </div>
+        <div class="p-3 border-t border-gray-200 flex">
+            <input
+                type="text"
+                placeholder="Type your message..."
+                class="flex-grow p-2 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-indigo-400"
+            />
+            <button
+                class="bg-indigo-600 text-white p-2 rounded-r-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    class="w-5 h-5"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+                </svg>
+                <span class="sr-only">Send message</span>
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const chatToggle = document.getElementById("chatToggle");
+        const chatContainer = document.getElementById("chatContainer");
+        const chatClose = document.getElementById("chatClose");
+
+        if (chatToggle && chatContainer && chatClose) {
+            chatToggle.addEventListener("click", () => {
+                chatContainer.classList.toggle("hidden");
+            });
+
+            chatClose.addEventListener("click", () => {
+                chatContainer.classList.add("hidden");
+            });
+        }
+    });
+</script>
